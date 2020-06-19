@@ -40,38 +40,3 @@ test("CLOSED => LISTEN => SYN_RCVD => ESTABLISHED", () => {
   });
   expect(tcpStateMachine.state).toBe("ESTABLISHED");
 });
-
-// // LISTEN => SYN_SENT
-// tcpStateMachine.next({
-//   evt: null,
-//   rcv: null,
-//   send: "SYN",
-// });
-
-// // SYN_SENT => ESTABLISHED
-// tcpStateMachine.next({
-//   evt: null,
-//   rcv: "SYN+ACK",
-//   send: "ACK",
-// });
-
-// // ESTABLISHED => FIN_WAIT_1
-// tcpStateMachine.next({
-//   evt: "Close",
-//   rcv: null,
-//   send: "FIN",
-// });
-
-// // FIN_WAIT_1 => FIN_WAIT_2
-// tcpStateMachine.next({
-//   evt: null,
-//   rcv: "ACK",
-//   send: null,
-// });
-
-// // FIN_WAIT_2 => TIME_WAIT
-// tcpStateMachine.next({
-//   evt: null,
-//   rcv: "FIN",
-//   send: "ACK",
-// });
